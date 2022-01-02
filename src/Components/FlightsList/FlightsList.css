@@ -1,0 +1,26 @@
+
+
+  .FlightsList {
+    width: 50%;
+    min-height: 950px;
+    padding: .88rem;
+    background-color: rgba(1, 12, 63, 0.7);
+    box-shadow: 0 4px 2px 2px #000000;
+  }
+
+
+  .box :hover {
+    background-color: rgb(141, 23, 23);
+  }
+  
+
+  @media only screen and (max-width: 1020px) {
+    .FlightsList {
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  h2 {
+    background-color: transparent;
+  }

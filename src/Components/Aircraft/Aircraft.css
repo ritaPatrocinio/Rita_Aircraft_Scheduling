@@ -1,0 +1,34 @@
+.Aircraft {
+    width: 100%;
+  }
+
+  .BarChar {
+    position: absolute;
+    left: 1%;
+    bottom: 35%;
+  }
+
+  h2 {
+    background-color: transparent;
+  }
+
+
+  .bar {
+    border: 1px solid white;
+    border-top: none;
+    height: 5px;
+    margin-bottom: 3%;
+  }
+
+  .LeftA {
+    float: left;
+    display: block;
+    margin-right: 1%;
+    font-size: 12px;
+  }
+  
+  .RightA {
+    margin-left: 98%;
+    font-size: 12px;
+  }
+  

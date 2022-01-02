@@ -1,0 +1,49 @@
+.Flight {
+    width: 100%;
+    background-color: transparent !important;
+  }
+
+  .Origin {
+    margin-top: 0%;
+    padding-top: 5%;}
+
+  
+
+.Left {
+  float: left;
+  display: block;
+  margin-right: 1%;
+  background-color: transparent !important;
+}
+
+.Left2 {
+  margin-left: -42%;
+  background-color: transparent !important;
+}
+
+.Arrow {
+  position: absolute;
+  right: 48%;
+}
+
+.Right {
+  float: right;
+  display: block;
+  margin-left: 1%;
+  background-color: transparent !important;
+}
+
+.Top {
+  display: inline-block;
+  margin-right: 30%;
+  background-color: transparent !important;
+}
+
+.Down {
+  display: inline-block;
+  background-color: transparent !important;
+}
+
+h2 {
+  background-color: transparent !important;
+}
