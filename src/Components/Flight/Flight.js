@@ -27,8 +27,6 @@ export function Flight(props) {
          });
     }
 
-
-
     const AddFlight = () => {
           ChooseFlight(props.flight)
       }
