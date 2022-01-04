@@ -1,17 +1,22 @@
 import React from "react";
-
 import './FlightsList.css';
 import {Flight} from '../Flight/Flight';
 
-export function FlightsList(props) {
+export function FlightsList({flights, setPickedFlights, isPicked, pickedFlights}) {
+    const pickedIDs = pickedFlights.map(pf => pf.id);
+    const filteredFlights = flights.filter((f) => !pickedIDs.includes(f.id));
         return (
             <div className="FlightsList">
-            <div className="Border">
-            {props.flights.map((flight, ind) => {return (  <div className="box"> <div className="height"></div> <Flight key={ind} flight={flight} 
-                         setPickedFlights={props.setPickedFlights} isPicked={props.isPicked}/> </div>)  }
-                )}
-            </div>
+                <div className="Border">
+                    {filteredFlights.map((flight) => {
+                        return ( 
+                            <div key={flight.id} className="box"> 
+                                <div className="height"></div> 
+                                <Flight flight={flight} setPickedFlights={setPickedFlights} isPicked={isPicked}/> 
+                            </div> 
+                              )}
+                    )}
+                </div>
             </div>
         )
-    
 }

@@ -3,6 +3,10 @@
     background-color: transparent !important;
   }
 
+  .FlightD {
+    cursor: pointer;
+  } 
+
   .Origin {
     margin-top: 0%;
     padding-top: 5%;}
