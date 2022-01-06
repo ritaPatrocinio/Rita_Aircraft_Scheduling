@@ -30,7 +30,7 @@ export function Aircraft({pickedFlights, name}) {
             });
             } 
             else if(i===pickedFlights.length-1){ //last flight of the list
-                setBar( (prev) => { return [...prev, ['c', (20*60 )/(secOfDay)]]  // c is turnover time
+                setBar( (prev) => { return [...prev, ['c', (20*60 )/(secOfDay)]]  // c is turnaround time
                 })
                 setBar( (prev) => { return [...prev, ['a', (flight.departuretime - pickedFlights[i-1].arrivaltime -20*60)/(secOfDay)]]
                 })
@@ -80,12 +80,12 @@ export function Aircraft({pickedFlights, name}) {
             <div className="Aircraft">
                 <div className="Border">
                     <h2>{name}</h2>
-                    <p>{Math.round(usability*100)}%</p>
+                    <p>({Math.round(usability*100)}%)</p>
                     <div className="BarChar">
                         {(pickedFlights.length ===0 ? '' :
                         (<div>
-                            <p className="LeftA">0</p>
-                            <p className="RightA">24</p>
+                            <p className="LeftA">00:00</p>
+                            <p className="RightA">24:00</p>
                             <div className="bar"></div> 
                         </div>)
                         )}
@@ -98,7 +98,7 @@ export function Aircraft({pickedFlights, name}) {
                             (b[0]=== 'b'? // b is time flying
                                 <div 
                                     key={ind} style={{width: b[1]*size, height: 40 , backgroundColor: "green", display: "inline-block"}}> 
-                                </div> : // c is turnover time
+                                </div> : // c is turnaround time
                                 <div 
                                     key={ind} style={{width: b[1]*size, height: 40 , backgroundColor: "purple", display: "inline-block"}}> 
                                 </div> )

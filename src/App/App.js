@@ -4,8 +4,20 @@ import {AircraftList} from '../Components/AircraftList/AircraftList';
 import {FlightsList}  from '../Components/FlightsList/FlightsList';
 
 function App() {
+  // date for tomorrow
   const tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
-  const month = tomorrow.getMonth() + 1;
+  const month = tomorrow.toLocaleDateString("en-US", {month: 'long'});
+
+  // day formatting
+  const nth = function(d) {
+    if (d > 3 && d < 21) return 'th';
+    switch (d % 10) {
+      case 1:  return "st";
+      case 2:  return "nd";
+      case 3:  return "rd";
+      default: return "th";
+    }
+  }
 
   const [aircraftList, setAircraftList] = useState([]);
   const [pickedFlights, setPickedFlights] = useState([]);
@@ -41,7 +53,7 @@ function App() {
   return (
     <div className="App App-background">
       <header>
-        <p>{'<  ' +  tomorrow.getDate() + '/' + month + '/' +  tomorrow.getFullYear() + '  >'}</p>
+        <p>{'<  ' +  tomorrow.getDate() + nth(tomorrow.getDate()) + ' ' + month + ' ' +  tomorrow.getFullYear() + '  >'}</p>
         <p>Rotation {pickedAircraft.ident}</p>
       </header>
       <h2 className='AircraftTitle'>Aircrafts</h2>

@@ -10,6 +10,7 @@
 
   h2 {
     background-color: transparent;
+    font-family: monospace;
   }
 
 
@@ -25,10 +26,11 @@
     display: block;
     margin-right: 1%;
     font-size: 12px;
+    margin-left: -2%;
   }
   
   .RightA {
-    margin-left: 98%;
+    margin-left: 95%;
     font-size: 12px;
   }
   
