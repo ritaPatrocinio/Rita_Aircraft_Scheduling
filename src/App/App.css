@@ -89,3 +89,18 @@ h2 {
   }
 }
 
+.Previous {
+  position: absolute;
+  top: 17%;
+  right: 26%;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+.Next {
+  position: absolute;
+  top: 17%;
+  right: 3%;
+  font-family: monospace;
+  cursor: pointer;
+}

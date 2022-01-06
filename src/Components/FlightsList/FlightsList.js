@@ -5,6 +5,7 @@ import {Flight} from '../Flight/Flight';
 export function FlightsList({flights, setPickedFlights, isPicked, pickedFlights}) {
     const pickedIDs = pickedFlights.map(pf => pf.id);
     const filteredFlights = flights.filter((f) => !pickedIDs.includes(f.id));
+    
         return (
             <div className="FlightsList">
                 <div className="Border">

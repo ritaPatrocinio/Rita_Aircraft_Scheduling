@@ -21,15 +21,13 @@
 }
 
 .Left2 {
-  margin-left: 10%;
+  margin-left: -36%;
   background-color: transparent !important;
-  float: left;
 }
 
 .Arrow {
   position: absolute;
   right: 48%;
-  margin-top: 5%;
 }
 
 .Right {

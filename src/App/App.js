@@ -10,7 +10,7 @@ function App() {
 
   // day formatting
   const nth = function(d) {
-    if (d > 3 && d < 21) return 'th';
+    if (d > 3 && d < 21) {return 'th';}
     switch (d % 10) {
       case 1:  return "st";
       case 2:  return "nd";
@@ -23,6 +23,8 @@ function App() {
   const [pickedFlights, setPickedFlights] = useState([]);
   const [pickedAircraft, setPickedAircraft] = useState([]);
   const [flights, setFlights] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [totalFlights, setTotalFlights] = useState(0)
 
   const getAircrafts = () => {
     fetch('https://infinite-dawn-93085.herokuapp.com/aircrafts')
@@ -36,19 +38,40 @@ function App() {
       })}
 
   const getFlights = () => {
-    fetch('https://infinite-dawn-93085.herokuapp.com/flights')
+    fetch(`https://infinite-dawn-93085.herokuapp.com/flights?offset=${offset}&limit=10`)
     .then(response => { return response.json()} )
     .then(jsonResponse => {
       if(!jsonResponse.data){
           return 
         };
       setFlights(jsonResponse.data);
+      setTotalFlights(jsonResponse.pagination.total)
     })}
 
   useEffect( () => {
-    getFlights(); 
     getAircrafts();
     }, [] )
+
+  useEffect( () => {
+    getFlights(); 
+    }, [offset] )
+
+  const next = () => {
+    setOffset(offset + 10)
+  }
+
+  const previous = () => {
+    setOffset(offset - 10)
+  }
+
+  const buttons = () => {
+    return( 
+      <div>
+        {offset > 0 ? <button className='Previous' onClick={previous}>Previous</button> : ''}
+        {offset <= totalFlights ? <button className='Next' onClick={next}>Next</button> : ''}  
+      </div>
+    )
+  }
 
   return (
     <div className="App App-background">
@@ -62,6 +85,7 @@ function App() {
         <FlightsList isPicked={true} pickedFlights={[]} flights={pickedFlights} setPickedFlights={setPickedFlights}/>
         <h2 className='FlightsTitle'>Flights</h2>
         <FlightsList isPicked={false} pickedFlights={pickedFlights} flights={flights} setPickedFlights={setPickedFlights} />
+        {buttons()}
       </div>
     </div>
   );

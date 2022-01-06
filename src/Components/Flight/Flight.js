@@ -10,9 +10,9 @@ export function Flight({setPickedFlights, flight, isPicked }) {
           // check if clicked Flight is already selected
            if (prev.includes(clickedFlight)) {
              // filter the clicked Flight out of state
-             return prev.filter(t => t !== clickedFlight);
+             return prev.filter(f => f !== clickedFlight);
            }
-            else if (lastFlight === 0 || (clickedFlight.arrivaltime < 86400 && 
+            else if (lastFlight === 0 || (clickedFlight.arrivaltime < 24*60*60 && 
                 clickedFlight.departuretime - lastFlight.arrivaltime >= 20*60 &&
                 clickedFlight.origin === lastFlight.destination)) {
              // add the clicked Flight to the state
