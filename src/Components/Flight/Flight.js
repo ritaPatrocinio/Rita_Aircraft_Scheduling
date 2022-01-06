@@ -7,8 +7,9 @@ export function Flight({setPickedFlights, flight, isPicked }) {
     const ChooseFlight = (clickedFlight) => {
         setPickedFlights((prev) => {
             const lastFlight = prev.length ===0 ? 0 : prev[prev.length -1];
-          // check if clicked Flight is already selected
-           if (prev.includes(clickedFlight)) {
+            const firstFlight = prev[0];
+          // check if clicked Flight is already selected and if it is in the beggining or end of the list
+           if (prev.includes(clickedFlight) && (clickedFlight === lastFlight || clickedFlight === firstFlight)) {
              // filter the clicked Flight out of state
              return prev.filter(f => f !== clickedFlight);
            }
