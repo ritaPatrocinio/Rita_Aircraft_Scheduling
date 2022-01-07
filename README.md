@@ -1,8 +1,8 @@
 To run this code in your computer:
 Run `npm i` and then run `npm start`. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The schedule day is always “tomorrow” (as per the symplification).
-The app shows a list of one aircraft (as per the symplification), which is obtained from the API (https://infinite-dawn-93085.herokuapp.com/aircrafts) 
+The schedule day is always “tomorrow” (as per the simplification).
+The app shows a list of one aircraft (as per the simplification), which is obtained from the API (https://infinite-dawn-93085.herokuapp.com/aircrafts) 
 and a list of all the flights the airline plans to operate that day, their origin, destination, departure time and arrival time, 
 obtained from the API (https://infinite-dawn-93085.herokuapp.com/flights).
 
@@ -10,10 +10,12 @@ The app allows the user to view and edit the daily rotation for the selection ai
 
 The app lets the user edit the rotation freely but enforces the following rules:
 Flights that have an arrival time after midnight can't be selected.
-The time diference between the arrival time of one flight and the departure time of the next flight in the list of picked flights has to be at least 20 min.
-The origin of one fliht has to be the same as the destination of the previous flight in the list of picked flights.
+The time difference between the arrival time of one flight and the departure time of the next flight in the list of picked flights must be at least 20 min.
+The origin of one flight must be the same as the destination of the previous flight in the list of picked flights.
 
-Because the second column fluctuates in size I added the aircraft timeline in the first column to keep it above the fold.
+To maintain coherence with the previously mentioned rules, a flight can only be removed from the top or the bottom of the picked flights list.
+
+Because the second column fluctuates in size, I added the aircraft timeline in the first column to keep it above the fold.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
