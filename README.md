@@ -1,3 +1,8 @@
+Live version: http://rita-aircrafts.surge.sh/
+
+Click on a flight to add it to the rotation!
+
+
 To run this code in your computer:
 Run `npm i` and then run `npm start`. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
