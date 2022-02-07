@@ -9,11 +9,11 @@ export function FlightsList({flights, setPickedFlights, isPicked, pickedFlights}
         return (
             <div className="FlightsList">
                 <div className="Border">
-                    {filteredFlights.map((flight) => {
+                    {filteredFlights.map((flight, i) => {
                         return ( 
                             <div key={flight.id} className="box"> 
                                 <div className="height"></div> 
-                                <Flight flight={flight} setPickedFlights={setPickedFlights} isPicked={isPicked}/> 
+                                <Flight remove={i===0 || i===filteredFlights.length-1} pickedFlights={pickedFlights} flight={flight} setPickedFlights={setPickedFlights} isPicked={isPicked}/> 
                             </div> 
                               )}
                     )}

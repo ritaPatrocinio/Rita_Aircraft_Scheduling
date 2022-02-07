@@ -52,3 +52,15 @@ h2 {
   background-color: transparent !important;
   font-family: monospace;
 }
+
+.Remove {
+  margin-top: 5%;
+  position: absolute;
+  right: calc(47% - -6px);
+}
+
+.Add{
+  margin-top: -3%;
+  position: absolute;
+  right: calc(15% - 0px);
+}

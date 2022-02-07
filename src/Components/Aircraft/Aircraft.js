@@ -91,17 +91,10 @@ export function Aircraft({pickedFlights, name}) {
                         )}
                         {bar.map( (b , ind) => {
                         return (
-                            b[0]=== 'a'? 
-                                <div // a is idle time
-                                    key={ind} style={{width: b[1]*size, height: 40 , backgroundColor: "grey", display: "inline-block"}}> 
-                                </div> : 
-                            (b[0]=== 'b'? // b is time flying
                                 <div 
-                                    key={ind} style={{width: b[1]*size, height: 40 , backgroundColor: "green", display: "inline-block"}}> 
-                                </div> : // c is turnaround time
-                                <div 
-                                    key={ind} style={{width: b[1]*size, height: 40 , backgroundColor: "purple", display: "inline-block"}}> 
-                                </div> )
+                                    key={ind} style={{width: b[1]*size, height: 40 , 
+                                    backgroundColor:b[0]==='a' ? "grey" : b[0]==='b' ? "green": "purple", display: "inline-block"}}> 
+                                </div> 
                                 )
                         })
                         } 

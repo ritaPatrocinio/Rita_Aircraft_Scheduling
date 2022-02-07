@@ -20,9 +20,9 @@ function App() {
   }
 
   const [aircraftList, setAircraftList] = useState([]);
-  const [pickedFlights, setPickedFlights] = useState([]);
   const [pickedAircraft, setPickedAircraft] = useState([]);
   const [flights, setFlights] = useState([]);
+  const [pickedFlights, setPickedFlights] = useState([]);
   const [offset, setOffset] = useState(0);
   const [totalFlights, setTotalFlights] = useState(0)
 
