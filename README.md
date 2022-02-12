@@ -1,6 +1,8 @@
-Live version: http://rita-aircrafts.surge.sh/
+[Live version here](http://rita-aircrafts.surge.sh/)
 
 Click on a flight to add it to the rotation!
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 To run this code in your computer:
